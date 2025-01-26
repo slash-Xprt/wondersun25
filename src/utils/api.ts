@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 interface ApiResponse {
   success: boolean;
@@ -15,45 +15,71 @@ export async function submitContactForm(data: {
   subject: string;
   message: string;
 }): Promise<ApiResponse> {
-  const response = await fetch(`${API_BASE_URL}/contact`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    console.log('Submitting to:', `${API_BASE_URL}/api/contact`);
+    
+    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data),
+    });
 
-  const result = await response.json();
+    const result = await response.json();
+    console.log('Response:', result);
 
-  if (!response.ok) {
-    throw new Error(
-      result.errors 
-        ? result.errors.map((e: any) => e.msg).join(', ') 
-        : result.message || 'Failed to send message'
-    );
+    if (!response.ok) {
+      if (result.errors) {
+        throw new Error(result.errors.map((e: any) => e.msg).join(', '));
+      }
+      throw new Error(result.message || 'Server returned an error');
+    }
+
+    return result;
+  } catch (error) {
+    console.error('Contact form error details:', {
+      error,
+      message: error instanceof Error ? error.message : 'Unknown error',
+      url: `${API_BASE_URL}/api/contact`,
+      data
+    });
+    throw new Error(error instanceof Error ? error.message : 'Failed to send message. Please try again later.');
   }
-
-  return result;
 }
 
 export async function subscribeToNewsletter(email: string): Promise<ApiResponse> {
-  const response = await fetch(`${API_BASE_URL}/newsletter`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email }),
-  });
+  try {
+    console.log('Subscribing to newsletter:', `${API_BASE_URL}/api/newsletter`);
+    
+    const response = await fetch(`${API_BASE_URL}/api/newsletter`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ email }),
+    });
 
-  const result = await response.json();
+    const result = await response.json();
+    console.log('Newsletter response:', result);
 
-  if (!response.ok) {
-    throw new Error(
-      result.errors 
-        ? result.errors.map((e: any) => e.msg).join(', ') 
-        : result.message || 'Failed to subscribe'
-    );
+    if (!response.ok) {
+      if (result.errors) {
+        throw new Error(result.errors.map((e: any) => e.msg).join(', '));
+      }
+      throw new Error(result.message || 'Server returned an error');
+    }
+
+    return result;
+  } catch (error) {
+    console.error('Newsletter error details:', {
+      error,
+      message: error instanceof Error ? error.message : 'Unknown error',
+      url: `${API_BASE_URL}/api/newsletter`,
+      email
+    });
+    throw new Error(error instanceof Error ? error.message : 'Failed to subscribe. Please try again later.');
   }
-
-  return result;
 }
