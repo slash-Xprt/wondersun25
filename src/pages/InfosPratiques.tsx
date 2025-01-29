@@ -17,8 +17,8 @@ export default function InfosPratiques() {
             <div className="grid md:grid-cols-4 gap-4">
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 flex flex-col items-center text-center border border-white/20">
                 <Clock className="h-6 w-6 text-yellow-400 mb-2" />
-                <p className="text-white font-bold">15-16 août</p>
-                <p className="text-sm text-gray-300">14h - 02h</p>
+                <p className="text-white font-bold">4 & 5 Juillet</p>
+                <p className="text-sm text-gray-300">18h - 02h</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 flex flex-col items-center text-center border border-white/20">
                 <MapPin className="h-6 w-6 text-yellow-400 mb-2" />
@@ -33,7 +33,7 @@ export default function InfosPratiques() {
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 flex flex-col items-center text-center border border-white/20">
                 <UtensilsCrossed className="h-6 w-6 text-yellow-400 mb-2" />
                 <p className="text-white font-bold">Food & Drinks</p>
-                <p className="text-sm text-gray-300">CB & Cashless</p>
+                <p className="text-sm text-gray-300">CB & Espèces</p>
               </div>
             </div>
 
@@ -103,11 +103,6 @@ export default function InfosPratiques() {
                     <li>• Soft drinks</li>
                   </ul>
                 </div>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                <p className="text-sm text-gray-300">
-                  💳 Paiement par CB et cashless uniquement
-                </p>
               </div>
             </section>
           </div>
