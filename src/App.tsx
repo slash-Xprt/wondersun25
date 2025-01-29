@@ -193,12 +193,17 @@ function App(): JSX.Element {
               if (emailInput.value && !isSubscribing) {
                 setIsSubscribing(true);
                 try {
-                  await subscribeToNewsletter(emailInput.value);
-                  emailInput.value = '';
-                  alert('Inscription réussie ! Vous recevrez bientôt un email de confirmation.');
+                  const response = await subscribeToNewsletter(emailInput.value);
+                  if (response.success) {
+                    emailInput.value = '';
+                    alert('Inscription réussie ! Vous recevrez bientôt un email de confirmation.');
+                  } else {
+                    throw new Error(response.message || 'Erreur lors de l\'inscription');
+                  }
                 } catch (error) {
-                  alert('Erreur lors de l\'inscription. Veuillez réessayer.');
                   console.error('Newsletter error:', error);
+                  const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue. Veuillez réessayer.';
+                  alert(errorMessage);
                 } finally {
                   setIsSubscribing(false);
                 }
@@ -211,11 +216,13 @@ function App(): JSX.Element {
               placeholder="ton adresse email"
               type="email"
               required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Veuillez entrer une adresse email valide"
               disabled={isSubscribing}
             />
             <button 
               type="submit" 
-              className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 w-full sm:w-auto"
               disabled={isSubscribing}
             >
               {isSubscribing ? 'Inscription...' : 'S\'inscrire'}
