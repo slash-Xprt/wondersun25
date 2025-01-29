@@ -10,6 +10,7 @@ import { subscribeToNewsletter } from './utils/api';
 function App(): JSX.Element {
   const [selectedDay, setSelectedDay] = useState<'day1' | 'day2'>('day1');
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
+  const [isSubscribing, setIsSubscribing] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -189,30 +190,35 @@ function App(): JSX.Element {
               const form = e.target as HTMLFormElement;
               const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
               
-              if (emailInput.value) {
+              if (emailInput.value && !isSubscribing) {
+                setIsSubscribing(true);
                 try {
                   await subscribeToNewsletter(emailInput.value);
-                  alert('Inscription réussie ! Vous recevrez bientôt un email de confirmation.');
                   emailInput.value = '';
+                  alert('Inscription réussie ! Vous recevrez bientôt un email de confirmation.');
                 } catch (error) {
                   alert('Erreur lors de l\'inscription. Veuillez réessayer.');
                   console.error('Newsletter error:', error);
+                } finally {
+                  setIsSubscribing(false);
                 }
               }
             }} 
             className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto"
           >
             <input
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 disabled:opacity-50"
               placeholder="ton adresse email"
               type="email"
               required
+              disabled={isSubscribing}
             />
             <button 
               type="submit" 
-              className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md"
+              className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              disabled={isSubscribing}
             >
-              S'inscrire
+              {isSubscribing ? 'Inscription...' : 'S\'inscrire'}
             </button>
           </form>
         </div>
