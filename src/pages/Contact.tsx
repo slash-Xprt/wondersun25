@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send, MapPin } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { submitContactForm } from '../utils/api';
 import { Header } from '../components/Header';
 
@@ -41,45 +41,18 @@ export default function Contact() {
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-12 text-center">
+            <h1 className="text-4xl font-bold text-yellow-400 mb-12 text-center">
               Contactez-nous
             </h1>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-6">Informations de contact</h2>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <Mail className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>
-                        <p className="text-white font-medium">Email</p>
-                        <p className="text-gray-300">contact@dromers.fr</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Phone className="h-6 w-6 text-yellow-400 mt-1" />
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>
-                        <p className="text-white font-medium">Adresse</p>
-                        <p className="text-gray-300">
-                          1 Avenue Saint-Martin<br />
-                          26200 Montélimar<br />
-                          France
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Form */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-purple-600/20 rounded-lg transform rotate-1"></div>
+              <div className="relative bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
                 {status === 'success' ? (
                   <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Send className="h-8 w-8 text-black" />
+                    </div>
                     <h3 className="text-2xl font-bold text-yellow-400 mb-4">Message envoyé !</h3>
                     <p className="text-white mb-6">Nous vous répondrons dans les plus brefs délais.</p>
                     <button
@@ -91,36 +64,38 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                        Nom complet
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                        placeholder="Votre nom"
-                      />
-                    </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                          Nom complet
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+                          placeholder="Votre nom"
+                        />
+                      </div>
 
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                        placeholder="votre@email.com"
-                      />
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+                          placeholder="votre@email.com"
+                        />
+                      </div>
                     </div>
 
                     <div>
@@ -133,7 +108,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
                       >
                         <option value="" className="bg-gray-900">Sélectionnez un sujet</option>
                         <option value="billetterie" className="bg-gray-900">Billetterie</option>
@@ -155,13 +130,13 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none transition-all"
                         placeholder="Votre message..."
                       />
                     </div>
 
                     {status === 'error' && (
-                      <div className="text-red-400 text-sm">
+                      <div className="text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-md p-3">
                         {errorMessage}
                       </div>
                     )}
@@ -169,7 +144,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className={`w-full flex items-center justify-center gap-2 bg-yellow-400 text-black font-medium py-3 px-6 rounded-md hover:bg-yellow-300 transition-colors ${
+                      className={`w-full flex items-center justify-center gap-2 bg-yellow-400 text-black font-medium py-3 px-6 rounded-md hover:bg-yellow-300 transition-all transform hover:scale-[1.02] ${
                         status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                     >
