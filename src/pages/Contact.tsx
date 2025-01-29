@@ -55,15 +55,11 @@ export default function Contact() {
                       <Mail className="h-6 w-6 text-yellow-400 mt-1" />
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <p className="text-gray-300">contact@wondersun-festival.fr</p>
+                        <p className="text-gray-300">contact@dromers.fr</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <Phone className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>
-                        <p className="text-white font-medium">Téléphone</p>
-                        <p className="text-gray-300">04 75 01 02 03</p>
-                      </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
@@ -76,15 +72,6 @@ export default function Contact() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-yellow-400 mb-4">Horaires d'ouverture</h3>
-                  <div className="space-y-2 text-gray-300">
-                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
-                    <p>Samedi: 10h00 - 16h00</p>
-                    <p>Dimanche: Fermé</p>
                   </div>
                 </div>
               </div>

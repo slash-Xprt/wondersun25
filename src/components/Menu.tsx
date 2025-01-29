@@ -106,14 +106,14 @@ export function Menu({ scrollPosition, onNavigate, currentPage }: MenuProps) {
                   className="text-lg font-medium text-white hover:text-yellow-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Lineup
+                  LineUp
                 </a>
                 <a 
                   href="#about" 
                   className="text-lg font-medium text-white hover:text-yellow-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  A propos
                 </a>
               </>
             ) : (
