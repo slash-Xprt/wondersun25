@@ -17,7 +17,6 @@ function App(): JSX.Element {
     day1: [
       {
         name: "Artist 1",
-        genre: "Pop",
         description: "Artist 1 is known for their energetic performances and chart-topping hits. With a unique blend of pop and electronic music, they've become one of the most sought-after performers in the industry.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "21:00",
@@ -26,8 +25,7 @@ function App(): JSX.Element {
         deezer: "https://www.deezer.com/artist/artist1"
       },
       {
-        name: "Artist 2",
-        genre: "Rock",
+        name: "Dolfeels",
         description: "Artist 2 brings raw energy and powerful vocals to every performance. Their latest album has received critical acclaim for its innovative approach to modern rock.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "22:30",
@@ -36,8 +34,7 @@ function App(): JSX.Element {
         deezer: "https://www.deezer.com/artist/artist2"
       },
       {
-        name: "Artist 3",
-        genre: "Electronic",
+        name: "Je t'Aime Rachel",
         description: "Artist 3 is a pioneer in electronic music, known for creating immersive sonic landscapes and unforgettable live experiences.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "00:00",
@@ -46,8 +43,7 @@ function App(): JSX.Element {
         deezer: "https://www.deezer.com/artist/artist3"
       },
       {
-        name: "Artist 4",
-        genre: "Hip Hop",
+        name: "Sabor a mi",
         description: "Artist 4 represents the new wave of hip hop, combining clever wordplay with innovative production to create a unique sound.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "01:30",
@@ -58,8 +54,7 @@ function App(): JSX.Element {
     ],
     day2: [
       {
-        name: "Artist 5",
-        genre: "R&B",
+        name: "Un*Deux",
         description: "Artist 5 is a rising star in the R&B scene, known for their smooth vocals and emotional performances. Their music blends traditional R&B with modern production.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "20:00",
@@ -69,7 +64,6 @@ function App(): JSX.Element {
       },
       {
         name: "Artist 6",
-        genre: "Indie",
         description: "Artist 6 brings a fresh perspective to indie music with their unique sound and compelling songwriting.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "21:30",
@@ -78,8 +72,7 @@ function App(): JSX.Element {
         deezer: "https://www.deezer.com/artist/artist6"
       },
       {
-        name: "Artist 7",
-        genre: "Jazz",
+        name: "Gis",
         description: "Artist 7 pushes the boundaries of contemporary jazz, creating innovative compositions that respect tradition while embracing modernity.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "23:00",
@@ -88,8 +81,7 @@ function App(): JSX.Element {
         deezer: "https://www.deezer.com/artist/artist7"
       },
       {
-        name: "Artist 8",
-        genre: "Folk",
+        name: "Ilan",
         description: "Artist 8 captivates audiences with their storytelling and authentic approach to folk music, creating intimate connections through their performances.",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
         time: "00:30",

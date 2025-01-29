@@ -38,7 +38,7 @@ export function MainHeader() {
             href="#about" 
             className="text-lg font-medium text-white hover:text-yellow-400 transition-colors"
           >
-            About
+            A propos
           </a>
           <Link 
             to="/infos" 
