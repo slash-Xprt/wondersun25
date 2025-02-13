@@ -170,7 +170,7 @@ function App(): JSX.Element {
             </div>
             <div className="relative h-96">
               <img
-                src="public/belvedere.JPG"
+                src="/images/belvedere.jpg"
                 alt="Festival atmosphere"
                 className="w-full h-full object-cover rounded-lg"
               />
