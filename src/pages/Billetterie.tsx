@@ -37,17 +37,17 @@ export default function Billetterie() {
           </h1>
 
           {/* Billetweb Widget */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto h-[calc(100vh-13rem)]">
             <a 
               title="Vente de billets en ligne" 
-              href="https://www.billetweb.fr/shop.php?event=wondersun-festival1" 
+              href="https://www.billetweb.fr/shop.php?event=wondersun-festival-2025" 
               className="shop_frame" 
               target="_blank" 
-              data-src="https://www.billetweb.fr/shop.php?event=wondersun-festival1" 
+              data-src="https://www.billetweb.fr/shop.php?event=wondersun-festival-2025" 
               data-max-width="100%" 
-              data-initial-height="600" 
+              data-initial-height="100%" 
               data-scrolling="no" 
-              data-id="wondersun-festival1" 
+              data-id="wondersun-festival-2025" 
               data-resize="1"
               rel="noopener noreferrer"
             >
