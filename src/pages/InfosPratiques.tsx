@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, Car, UtensilsCrossed, Leaf, Truck, Globe, Coffee, ParkingMeter as Parking, Train } from 'lucide-react';
+import { MapPin, Clock, Car, UtensilsCrossed, Leaf, Truck, Globe, Coffee, ParkingMeter as Parking, Train, ParkingCircle } from 'lucide-react';
 import { Header } from '../components/Header';
 
 export default function InfosPratiques() {
@@ -57,13 +57,12 @@ export default function InfosPratiques() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-yellow-400 font-medium">
-                    <Train className="h-4 w-4" />
-                    En train + navette
+                    <ParkingCircle className="h-4 w-4" />
+                    Parkings
                   </div>
                   <ul className="text-white space-y-1 text-sm pl-6">
-                    <li>• Gare de Montélimar</li>
-                    <li>• Navettes gratuites (12h-20h)</li>
-                    <li>• Départ toutes les 30 min</li>
+                    <li>• Parking du Foyer rural</li>
+                    <li>• parking palce des Lys </li>
                   </ul>
                 </div>
               </div>

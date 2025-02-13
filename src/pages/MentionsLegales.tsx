@@ -81,8 +81,7 @@ export default function MentionsLegales() {
                 <div className="bg-white/5 p-4 rounded-lg">
                   <p className="text-gray-300">
                     Pour toute question concernant ces mentions légales, vous pouvez nous contacter :<br /><br />
-                    Email : contact@wondersun-festival.fr<br />
-                    Téléphone : 04 75 01 02 03<br />
+                    Email : contact@dromers.fr<br />
                     Adresse : 1 Avenue Saint-Martin, 26200 Montélimar
                   </p>
                 </div>
