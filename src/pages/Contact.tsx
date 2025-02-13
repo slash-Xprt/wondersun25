@@ -60,7 +60,7 @@ export default function Contact() {
                     </div>
                     <div className="flex items-start gap-4">
                       <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>
+                      <div>gi
                         <p className="text-white font-medium">Adresse</p>
                         <p className="text-gray-300">
                           1 Avenue Saint-Martin<br />

@@ -212,7 +212,7 @@ function App(): JSX.Element {
             className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto"
           >
             <input
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-yellow-400"
               placeholder="ton adresse email"
               type="email"
               required
