@@ -59,13 +59,6 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <Phone className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>
-                        <p className="text-white font-medium">Téléphone</p>
-                        <p className="text-gray-300">04 75 01 02 03</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
                       <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
                       <div>
                         <p className="text-white font-medium">Adresse</p>
