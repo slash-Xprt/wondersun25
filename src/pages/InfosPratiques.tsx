@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 
 export default function InfosPratiques() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-purple-900">
+    <div className="min-h-screen bg-gradient-to-t from-[#699ae0] to-[#ff8f96]">
       <Header />
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">

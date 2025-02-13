@@ -18,12 +18,12 @@ export function MainHeader() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrollPosition > 50 ? 'bg-black bg-opacity-80 backdrop-blur-md' : ''
+      scrollPosition > 50 ? 'bg-[#ff8f96] bg-opacity-80 backdrop-blur-md' : ''
     }`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <Logo className="h-16 w-auto text-yellow-400 hover:text-yellow-300 transition-colors" />
+          <Logo className="h-16 w-auto text-white hover:text-yellow-300 transition-colors" />
         </Link>
 
         {/* Desktop Navigation */}

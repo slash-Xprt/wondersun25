@@ -112,7 +112,7 @@ function App(): JSX.Element {
       </section>
 
       {/* Lineup Section */}
-      <section id="lineup" className="py-20 bg-gradient-to-b from-black to-purple-900">
+      <section id="lineup" className="py-20 bg-gradient-to-b from-[#699ae0] to-[#ff8f96]"      >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">Lineup</h2>
           <div className="flex justify-center space-x-4 mb-12">
@@ -156,7 +156,7 @@ function App(): JSX.Element {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-black">
+      <section id="about" className="py-20 bg-[#ff8f96]">
         <div className="container mx-auto px-4">
           <div className="grid gap-10 md:grid-cols-2 items-center">
             <div className="space-y-4">
@@ -180,7 +180,7 @@ function App(): JSX.Element {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-purple-900">
+      <section className="py-20 bg-gradient-to-t from-[#699ae0] to-[#ff8f96]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Reste informé.e</h2>
           <p className="text-xl mb-8 text-white">Abonne toi et sois le ou la première informée des actus et mise en vente des billets.</p>
@@ -212,7 +212,7 @@ function App(): JSX.Element {
             className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto"
           >
             <input
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 disabled:opacity-50"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400"
               placeholder="ton adresse email"
               type="email"
               required

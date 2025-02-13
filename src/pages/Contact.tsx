@@ -36,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-purple-900">
+    <div className="min-h-screen bg-gradient-to-t from-[#699ae0] to-[#ff8f96]">
       <Header />
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
@@ -45,9 +45,52 @@ export default function Contact() {
               Contactez-nous
             </h1>
 
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-purple-600/20 rounded-lg transform rotate-1"></div>
-              <div className="relative bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-6">Informations de contact</h2>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <Mail className="h-6 w-6 text-yellow-400 mt-1" />
+                      <div>
+                        <p className="text-white font-medium">Email</p>
+                        <p className="text-gray-300">contact@wondersun-festival.fr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <Phone className="h-6 w-6 text-yellow-400 mt-1" />
+                      <div>
+                        <p className="text-white font-medium">Téléphone</p>
+                        <p className="text-gray-300">04 75 01 02 03</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
+                      <div>
+                        <p className="text-white font-medium">Adresse</p>
+                        <p className="text-gray-300">
+                          1 Avenue Saint-Martin<br />
+                          26200 Montélimar<br />
+                          France
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">Horaires d'ouverture</h3>
+                  <div className="space-y-2 text-gray-300">
+                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
+                    <p>Samedi: 10h00 - 16h00</p>
+                    <p>Dimanche: Fermé</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Form */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
                 {status === 'success' ? (
                   <div className="text-center py-8">
                     <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
