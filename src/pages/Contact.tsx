@@ -55,12 +55,12 @@ export default function Contact() {
                       <Mail className="h-6 w-6 text-yellow-400 mt-1" />
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <p className="text-gray-300">contact@wondersun-festival.fr</p>
+                        <p className="text-gray-300">contact@dromers.fr</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <MapPin className="h-6 w-6 text-yellow-400 mt-1" />
-                      <div>gi
+                      <div>
                         <p className="text-white font-medium">Adresse</p>
                         <p className="text-gray-300">
                           1 Avenue Saint-Martin<br />
@@ -69,15 +69,6 @@ export default function Contact() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-yellow-400 mb-4">Horaires d'ouverture</h3>
-                  <div className="space-y-2 text-gray-300">
-                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
-                    <p>Samedi: 10h00 - 16h00</p>
-                    <p>Dimanche: Fermé</p>
                   </div>
                 </div>
               </div>
@@ -112,7 +103,7 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
                           placeholder="Votre nom"
                         />
                       </div>
@@ -128,7 +119,7 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
                           placeholder="votre@email.com"
                         />
                       </div>
@@ -144,7 +135,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
                       >
                         <option value="" className="bg-gray-900">Sélectionnez un sujet</option>
                         <option value="billetterie" className="bg-gray-900">Billetterie</option>
@@ -166,7 +157,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none transition-all"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none transition-all"
                         placeholder="Votre message..."
                       />
                     </div>
