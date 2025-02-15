@@ -1,7 +1,7 @@
 // In development, use the full URL. In production, use Netlify Functions URL
 const API_BASE_URL = import.meta.env.DEV 
   ? (import.meta.env.VITE_API_URL || 'http://localhost:8888')
-  : '/.netlify/functions/api';
+  : '';  // Empty string in production since we use absolute paths
 
 interface ApiResponse {
   success: boolean;
@@ -42,7 +42,9 @@ export async function submitContactForm(data: {
   message: string;
 }): Promise<ApiResponse> {
   try {
-    const endpoint = `${API_BASE_URL}/contact`;
+    const endpoint = import.meta.env.DEV
+      ? `${API_BASE_URL}/api/contact`
+      : '/.netlify/functions/api/contact';
     console.log('Submitting to:', endpoint);
     
     const response = await fetch(endpoint, {
@@ -59,7 +61,7 @@ export async function submitContactForm(data: {
     console.error('Contact form error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      endpoint: `${API_BASE_URL}/contact`,
+      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/contact` : '/.netlify/functions/api/contact',
       data
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to send message. Please try again later.');
@@ -68,7 +70,9 @@ export async function submitContactForm(data: {
 
 export async function subscribeToNewsletter(email: string): Promise<ApiResponse> {
   try {
-    const endpoint = `${API_BASE_URL}/newsletter`;
+    const endpoint = import.meta.env.DEV
+      ? `${API_BASE_URL}/api/newsletter`
+      : '/.netlify/functions/api/newsletter';
     console.log('Subscribing to newsletter:', endpoint);
     
     const response = await fetch(endpoint, {
@@ -85,7 +89,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
     console.error('Newsletter error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      endpoint: `${API_BASE_URL}/newsletter`,
+      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/newsletter` : '/.netlify/functions/api/newsletter',
       email
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to subscribe. Please try again later.');
