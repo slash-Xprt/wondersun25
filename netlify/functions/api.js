@@ -83,6 +83,12 @@ const newsletterValidation = [
     .isLength({ max: 100 }).withMessage('Email is too long')
 ];
 
+// Strip the /api prefix from the request URL if present
+app.use((req, res, next) => {
+  req.url = req.url.replace(/^\/api/, '');
+  next();
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ 
