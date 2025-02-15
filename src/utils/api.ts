@@ -50,7 +50,7 @@ export async function submitContactForm(data: {
   try {
     const endpoint = import.meta.env.DEV
       ? `${API_BASE_URL}/api/contact`
-      : '/.netlify/functions/api/contact';
+      : '/api/contact';
     console.log('Submitting to:', endpoint);
     
     const response = await fetch(endpoint, {
@@ -67,7 +67,7 @@ export async function submitContactForm(data: {
     console.error('Contact form error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/contact` : '/.netlify/functions/api/contact',
+      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/contact` : '/api/contact',
       data
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to send message. Please try again later.');
@@ -78,7 +78,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
   try {
     const endpoint = import.meta.env.DEV
       ? `${API_BASE_URL}/api/newsletter`
-      : '/.netlify/functions/api/newsletter';
+      : '/api/newsletter';
     console.log('Subscribing to newsletter at:', endpoint);
     
     const response = await fetch(endpoint, {
@@ -95,7 +95,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
     console.error('Newsletter error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/newsletter` : '/.netlify/functions/api/newsletter',
+      endpoint: import.meta.env.DEV ? `${API_BASE_URL}/api/newsletter` : '/api/newsletter',
       email
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to subscribe. Please try again later.');
