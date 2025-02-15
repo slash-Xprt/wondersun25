@@ -32,7 +32,7 @@ export function MainHeader() {
             href="#lineup" 
             className="text-lg font-medium text-white hover:text-yellow-400 transition-colors"
           >
-            Lineup
+            {/*  Lineup */}
           </a>
           <a 
             href="#about" 

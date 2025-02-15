@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Header } from '../components/Header';
+import { Link } from 'react-router-dom';
+import { Logo } from '../components/Logo';
 
 declare global {
   interface Window {
@@ -29,7 +30,11 @@ export default function Billetterie() {
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#699ae0] to-[#ff8f96]">
-      <Header />
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#ff8f96] bg-opacity-80 backdrop-blur-md">
+        <div className="container mx-auto px-4 py-4 flex justify-center">
+            <Logo className="h-16 w-auto text-white hover:text-yellow-300 transition-colors" />
+        </div>
+      </header>
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-12 text-center">

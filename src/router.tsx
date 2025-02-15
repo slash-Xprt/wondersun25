@@ -5,11 +5,11 @@ import MentionsLegales from './pages/MentionsLegales';
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
 import Contact from './pages/Contact';
 import Billetterie from './pages/Billetterie';
-
+import WIP from './pages/WIP';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <WIP />,
     children: [
       {
         path: 'infos',
