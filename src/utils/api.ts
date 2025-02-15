@@ -12,6 +12,29 @@ interface ApiResponse {
   }>;
 }
 
+async function handleResponse(response: Response): Promise<ApiResponse> {
+  const contentType = response.headers.get('content-type');
+  if (!contentType || !contentType.includes('application/json')) {
+    throw new Error('Server returned an invalid response format');
+  }
+
+  try {
+    const data = await response.json();
+    if (!response.ok) {
+      if (data.errors) {
+        throw new Error(data.errors.map((e: any) => e.msg).join(', '));
+      }
+      throw new Error(data.message || 'Server returned an error');
+    }
+    return data;
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      throw new Error('Server returned invalid JSON data');
+    }
+    throw error;
+  }
+}
+
 export async function submitContactForm(data: {
   name: string;
   email: string;
@@ -31,17 +54,7 @@ export async function submitContactForm(data: {
       body: JSON.stringify(data),
     });
 
-    const result = await response.json();
-    console.log('Response:', result);
-
-    if (!response.ok) {
-      if (result.errors) {
-        throw new Error(result.errors.map((e: any) => e.msg).join(', '));
-      }
-      throw new Error(result.message || 'Server returned an error');
-    }
-
-    return result;
+    return await handleResponse(response);
   } catch (error) {
     console.error('Contact form error details:', {
       error,
@@ -67,17 +80,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
       body: JSON.stringify({ email }),
     });
 
-    const result = await response.json();
-    console.log('Newsletter response:', result);
-
-    if (!response.ok) {
-      if (result.errors) {
-        throw new Error(result.errors.map((e: any) => e.msg).join(', '));
-      }
-      throw new Error(result.message || 'Server returned an error');
-    }
-
-    return result;
+    return await handleResponse(response);
   } catch (error) {
     console.error('Newsletter error details:', {
       error,

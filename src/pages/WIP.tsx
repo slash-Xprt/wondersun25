@@ -94,7 +94,7 @@ function WIP() {
               placeholder="ton adresse email"
               type="email"
               required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               title="Veuillez entrer une adresse email valide"
               disabled={isSubscribing}
             />
