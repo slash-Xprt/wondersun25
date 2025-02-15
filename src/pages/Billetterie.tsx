@@ -32,7 +32,9 @@ export default function Billetterie() {
     <div className="min-h-screen bg-gradient-to-t from-[#699ae0] to-[#ff8f96]">
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#ff8f96] bg-opacity-80 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4 flex justify-center">
-            <Logo className="h-16 w-auto text-white hover:text-yellow-300 transition-colors" />
+            <Link to="/">
+                <Logo className="h-16 w-auto text-white hover:text-yellow-300 transition-colors" />
+            </Link>
         </div>
       </header>
       <main className="pt-32 pb-16">

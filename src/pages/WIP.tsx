@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, Link } from 'react-router-dom';
 import { MainHeader } from '../components/MainHeader';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -25,6 +25,12 @@ function WIP() {
         <div className="relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white">Wondersun Festival</h1>
           <h3 className="text-xl md:text-2xl mb-8 text-white">4 & 5 juillet 2025 • Vieil Allan</h3>
+          <Link 
+            to="/billetterie"
+            className="inline-block px-8 py-3 bg-yellow-400 text-black font-medium rounded-md hover:bg-yellow-300 transition-colors"
+          >
+            Ticket
+          </Link>
         </div>
       </section>
 
@@ -43,7 +49,7 @@ function WIP() {
             </div>
             <div className="relative h-96">
               <img
-                src="public/images/belvedere.JPG"
+                src="/images/belvedere.JPG"
                 alt="Festival atmosphere"
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -95,7 +101,7 @@ function WIP() {
             />
             <button 
               type="submit" 
-              className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 w-full sm:w-auto"
+              className="bg-yellow-400 text-black text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 w-full sm:w-auto"
               disabled={isSubscribing}
             >
               {isSubscribing ? 'Inscription...' : 'S\'inscrire'}
