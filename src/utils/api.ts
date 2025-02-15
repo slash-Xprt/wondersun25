@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://wondersun-festival-backend.onrender.com';
+// In development, use the full URL. In production, use relative path for Netlify functions
+const API_BASE_URL = import.meta.env.DEV 
+  ? (import.meta.env.VITE_API_URL || 'http://localhost:8888')
+  : '';
 
 interface ApiResponse {
   success: boolean;
@@ -16,9 +19,10 @@ export async function submitContactForm(data: {
   message: string;
 }): Promise<ApiResponse> {
   try {
-    console.log('Submitting to:', `${API_BASE_URL}/api/contact`);
+    const endpoint = `${API_BASE_URL}/api/contact`;
+    console.log('Submitting to:', endpoint);
     
-    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +46,7 @@ export async function submitContactForm(data: {
     console.error('Contact form error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      url: `${API_BASE_URL}/api/contact`,
+      endpoint: `${API_BASE_URL}/api/contact`,
       data
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to send message. Please try again later.');
@@ -51,9 +55,10 @@ export async function submitContactForm(data: {
 
 export async function subscribeToNewsletter(email: string): Promise<ApiResponse> {
   try {
-    console.log('Subscribing to newsletter:', `${API_BASE_URL}/api/newsletter`);
+    const endpoint = `${API_BASE_URL}/api/newsletter`;
+    console.log('Subscribing to newsletter:', endpoint);
     
-    const response = await fetch(`${API_BASE_URL}/api/newsletter`, {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -77,7 +82,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
     console.error('Newsletter error details:', {
       error,
       message: error instanceof Error ? error.message : 'Unknown error',
-      url: `${API_BASE_URL}/api/newsletter`,
+      endpoint: `${API_BASE_URL}/api/newsletter`,
       email
     });
     throw new Error(error instanceof Error ? error.message : 'Failed to subscribe. Please try again later.');

@@ -23,7 +23,7 @@ function WIP() {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white">4 & 5 juillet 2025 • Vieil Allan</h1>
+          <h1 className="text-1xl md:text-5xl font-bold mb-5 tracking-large text-white">4 & 5 juillet 2025 • Vieil Allan</h1>
           <Link 
             to="/billetterie"
             className="inline-block px-8 py-3 bg-yellow-400 text-black font-medium rounded-md hover:bg-yellow-300 transition-colors"
