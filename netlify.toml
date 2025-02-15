@@ -17,8 +17,8 @@
   autoLaunch = true
 
 [[redirects]]
-  from = "/.netlify/functions/api/*"
-  to = "/.netlify/functions/api/:splat"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
   force = true
 

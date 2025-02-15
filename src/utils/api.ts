@@ -14,12 +14,17 @@ interface ApiResponse {
 
 async function handleResponse(response: Response): Promise<ApiResponse> {
   const contentType = response.headers.get('content-type');
+  console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+  console.log('Response status:', response.status);
+  
   if (!contentType || !contentType.includes('application/json')) {
+    console.error('Invalid content type:', contentType);
     throw new Error('Server returned an invalid response format');
   }
 
   try {
     const data = await response.json();
+    console.log('Response data:', data);
     if (!response.ok) {
       if (data.errors) {
         throw new Error(data.errors.map((e: any) => e.msg).join(', '));
@@ -28,6 +33,7 @@ async function handleResponse(response: Response): Promise<ApiResponse> {
     }
     return data;
   } catch (error) {
+    console.error('Response parsing error:', error);
     if (error instanceof SyntaxError) {
       throw new Error('Server returned invalid JSON data');
     }
@@ -73,7 +79,7 @@ export async function subscribeToNewsletter(email: string): Promise<ApiResponse>
     const endpoint = import.meta.env.DEV
       ? `${API_BASE_URL}/api/newsletter`
       : '/.netlify/functions/api/newsletter';
-    console.log('Subscribing to newsletter:', endpoint);
+    console.log('Subscribing to newsletter at:', endpoint);
     
     const response = await fetch(endpoint, {
       method: 'POST',
