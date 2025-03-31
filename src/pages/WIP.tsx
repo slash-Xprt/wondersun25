@@ -25,7 +25,6 @@ function WIP() {
     Votre navigateur ne supporte pas les vidéos HTML5.
   </video>
           <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
         <div className="relative z-10 text-center">
           <h1 className="text-1xl md:text-5xl font-bold mb-5 tracking-large text-white">4 & 5 juillet 2025 • Vieil Allan!</h1>
           <Link 
