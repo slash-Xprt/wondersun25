@@ -21,7 +21,7 @@ function WIP() {
     muted 
     playsInline
   >
-    <source src="/images/Header Website low file.mp4" type="video/mp4" />
+    <source src="/images/Header Website.mp4" type="video/mp4" />
     Votre navigateur ne supporte pas les vidéos HTML5.
   </video>
           <div className="absolute inset-0 bg-black opacity-50"></div>
