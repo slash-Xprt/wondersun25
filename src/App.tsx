@@ -95,22 +95,30 @@ function App(): JSX.Element {
 
   const renderHomePage = () => (
     <main className="flex-1">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url("public/images/Header Website low file.mp4")',
-          }}
-        >
+       {/* Hero Section */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <video 
+    className="absolute inset-0 w-full h-full object-cover"
+    autoPlay 
+    loop 
+    muted 
+    playsInline
+  >
+    <source src="/images/Header Website.mp4" type="video/mp4" />
+    Votre navigateur ne supporte pas les vidéos HTML5.
+  </video>
           <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white">Wondersun Festival</h1>
-          <h3 className="text-xl md:text-2xl mb-8 text-white">4 & 5 juillet 2025 • Vieil Allan</h3>
+          <h1 className="text-1xl md:text-5xl font-bold mb-5 tracking-large text-white">4 & 5 juillet 2025 • Vieil Allan!</h1>
+          <Link 
+            to="/billetterie"
+            className="inline-block px-8 py-3 bg-yellow-400 text-black font-medium rounded-md hover:bg-yellow-300 transition-colors"
+          >
+            Ticket
+          </Link>
         </div>
       </section>
-
+      
       {/* Lineup Section */}
       <section id="lineup" className="py-20 bg-gradient-to-b from-[#699ae0] to-[#ff8f96]"      >
         <div className="container mx-auto px-4">
