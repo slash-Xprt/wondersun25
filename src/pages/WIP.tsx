@@ -17,7 +17,7 @@ function WIP() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/DSC_1290.jpg')`
+            backgroundImage: `url('public/images/Header Website low file.mp4')`
           }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
