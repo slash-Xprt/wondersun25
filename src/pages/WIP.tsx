@@ -14,12 +14,16 @@ function WIP() {
     <main className="flex-1">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('public/images/Header Website low file.mp4')`
-          }}
-        >
+    <video 
+    className="absolute inset-0 w-full h-full object-cover"
+    autoPlay 
+    loop 
+    muted 
+    playsInline
+  >
+    <source src="/images/Header Website low file.mp4" type="video/mp4" />
+    Votre navigateur ne supporte pas les vidéos HTML5.
+  </video>
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 text-center">
