@@ -1,7 +1,7 @@
 import React from 'react';
-import { X, Instagram, Radio } from 'lucide-react';
+import { X, Instagram, Radio, Youtube } from 'lucide-react';
 import { SpotifyIcon } from './SpotifyIcon';
-import { Artist } from '../types';
+import { Artist } from '../types';;
 
 interface ArtistModalProps {
   artist: Artist;
@@ -52,20 +52,20 @@ export function ArtistModal({ artist, onClose, performanceDay }: ArtistModalProp
               <Instagram className="h-6 w-6" />
             </a>
             <a
-              href={artist.spotify}
+              href={artist.soundcloud}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-[#1DB954] transition-colors"
             >
-              <SpotifyIcon />
+              <Radio/>
             </a>
             <a
-              href={artist.deezer}
+              href={artist.youtube}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-yellow-400 transition-colors"
             >
-              <Radio className="h-6 w-6" />
+              <Youtube className="h-6 w-6" />
             </a>
           </div>
         </div>
