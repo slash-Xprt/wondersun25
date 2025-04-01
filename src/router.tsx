@@ -31,6 +31,10 @@ export const router = createBrowserRouter([
         path: 'billetterie',
         element: <Billetterie />,
       },
+      {
+        path: 'welcome',
+        element: <App />,
+      },
     ],
   },
 ]);

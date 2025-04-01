@@ -19,7 +19,7 @@ function App(): JSX.Element {
       {
         name: "Chicks Luv Us",
         description: "Originaire de Marseille, le groupe s'est forgé une solide réputation avec des sets énergiques et des productions signées sur des labels de renom comme Hot Creations et Repopulate Mars. Leur style festif et percutant, mêlant groove et basslines entraînantes, enflamme les clubs et festivals à travers le monde.",
-        image: "public/images/chicksluvus.JPG",
+        image: "/images/chicksluvus.JPG",
         instagram: "https://www.instagram.com/chicksluvus/",
         soundcloud: "https://soundcloud.com/chicksluvus",
         youtube: "https://www.youtube.com/watch?v=eaEK7cQ9mw4",
