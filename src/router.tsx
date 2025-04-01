@@ -9,7 +9,7 @@ import WIP from './pages/WIP';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <WIP />,
+    element: <App />,
     children: [
       {
         path: 'infos',
@@ -30,10 +30,6 @@ export const router = createBrowserRouter([
       {
         path: 'billetterie',
         element: <Billetterie />,
-      },
-      {
-        path: 'landing',
-        element: <App />,
       },
     ],
   },
