@@ -27,7 +27,7 @@ function App(): JSX.Element {
       {
         name: "Dolfeels",
         description: "Dolfeels fait parti de ces jeunes artistes discrets qui font avancer la scène underground lyonnaise. Il s'emploie à diffuser ses sonorités Deep, Envoutante et Percutantes lors de ses set.",
-        image: "public/images/dolfeels.jpg",
+        image: "images/dolfeels.jpg",
         instagram: "https://www.instagram.com/dolfeels/",
         soundcloud: "https://soundcloud.com/dolfeels",
         youtube: "https://www.youtube.com/watch?v=lT_AK2qnfX4",
@@ -35,14 +35,14 @@ function App(): JSX.Element {
       {
         name: "Je t'Aime Rache L",
         description: "Figure incontournable du collectif drômois ROMANESQUE, Je t'aime Rache L est un éternel pacifiste qui cherche de manière continuelle à vous proposer ses disques laissant place au rêve, à l'amour et à la joie.",
-        image: "public/images/jtmrachl.jpg",
+        image: "images/jtmrachl.jpg",
         instagram: "https://www.instagram.com/jetaimerachel/",
         soundcloud: "https://soundcloud.com/kioskradio/je-taime-rache-l-kiosk-radio",
       },
       {
         name: "Sabor a mi",
         description: "Sabor a Mi (Sophie Legay Peñaloza), c'est une âme romantique avec une énergie débordante, beaucoup d'amour et une manière d'apprécier le moment présent comme si c'était le dernier.",
-        image: "public/images/Saborami2.jpg",
+        image: "images/Saborami2.jpg",
         instagram: "https://www.instagram.com/sabor_a__mi/",
         soundcloud: "https://soundcloud.com/sophie-legay-1",
         youtube: "https://youtu.be/NB7YU-Q-R50",
@@ -52,7 +52,7 @@ function App(): JSX.Element {
       {
         name: "Un*Deux & guests",
         description: "Originaire de Vitry Sur Seine, UN*DEUX est un jeune DJ/Producteur possédant une large palette d'influences qui se reflète dans ses propres productions et ses DJ set, ou il n'hésite pas à croiser House, Techno et Hip Hop.",
-        image: "public/images/undeux.jpg",
+        image: "images/undeux.jpg",
         instagram: "https://soundcloud.com/un-deux",
         soundcloud: "https://www.instagram.com/undeux",
         youtube: "https://www.youtube.com/watch?v=8Qyqqthwpd8",
