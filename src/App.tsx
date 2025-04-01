@@ -59,7 +59,7 @@ function App(): JSX.Element {
       },
       {
         name: "Charbeat & Galvain",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
+        image: "images/charbeat.jpeg",
         instagram: "https://www.instagram.com/dj_charbeat/",
 
       },
