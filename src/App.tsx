@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, Link } from 'react-router-dom';
 import { Header } from './components/Header';
 import { MainHeader } from './components/MainHeader';
 import { Footer } from './components/Footer';
@@ -17,79 +17,52 @@ function App(): JSX.Element {
   const lineup = {
     day1: [
       {
-        name: "Artist 1",
-        description: "Artist 1 is known for their energetic performances and chart-topping hits. With a unique blend of pop and electronic music, they've become one of the most sought-after performers in the industry.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "21:00",
-        instagram: "https://instagram.com/artist1",
-        spotify: "https://open.spotify.com/artist/artist1",
-        deezer: "https://www.deezer.com/artist/artist1"
+        name: "Chicks Luv Us",
+        description: "Originaire de Marseille, le groupe s'est forgé une solide réputation avec des sets énergiques et des productions signées sur des labels de renom comme Hot Creations et Repopulate Mars. Leur style festif et percutant, mêlant groove et basslines entraînantes, enflamme les clubs et festivals à travers le monde.",
+        image: "public/images/chicksluvus.JPG",
+        instagram: "https://www.instagram.com/chicksluvus/",
+        soundcloud: "https://soundcloud.com/chicksluvus",
+        youtube: "https://www.youtube.com/watch?v=eaEK7cQ9mw4",
       },
       {
         name: "Dolfeels",
-        description: "Artist 2 brings raw energy and powerful vocals to every performance. Their latest album has received critical acclaim for its innovative approach to modern rock.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "22:30",
-        instagram: "https://instagram.com/artist2",
-        spotify: "https://open.spotify.com/artist/artist2",
-        deezer: "https://www.deezer.com/artist/artist2"
+        description: "Dolfeels fait parti de ces jeunes artistes discrets qui font avancer la scène underground lyonnaise. Il s'emploie à diffuser ses sonorités Deep, Envoutante et Percutantes lors de ses set.",
+        image: "public/images/dolfeels.jpg",
+        instagram: "https://www.instagram.com/dolfeels/",
+        soundcloud: "https://soundcloud.com/dolfeels",
+        youtube: "https://www.youtube.com/watch?v=lT_AK2qnfX4",
       },
       {
-        name: "Je t'Aime Rachel",
-        description: "Artist 3 is a pioneer in electronic music, known for creating immersive sonic landscapes and unforgettable live experiences.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "00:00",
-        instagram: "https://instagram.com/artist3",
-        spotify: "https://open.spotify.com/artist/artist3",
-        deezer: "https://www.deezer.com/artist/artist3"
+        name: "Je t'Aime Rache L",
+        description: "Figure incontournable du collectif drômois ROMANESQUE, Je t'aime Rache L est un éternel pacifiste qui cherche de manière continuelle à vous proposer ses disques laissant place au rêve, à l'amour et à la joie.",
+        image: "public/images/jtmrachl.jpg",
+        instagram: "https://www.instagram.com/jetaimerachel/",
+        soundcloud: "https://soundcloud.com/kioskradio/je-taime-rache-l-kiosk-radio",
       },
       {
         name: "Sabor a mi",
-        description: "Artist 4 represents the new wave of hip hop, combining clever wordplay with innovative production to create a unique sound.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "01:30",
-        instagram: "https://instagram.com/artist4",
-        spotify: "https://open.spotify.com/artist/artist4",
-        deezer: "https://www.deezer.com/artist/artist4"
+        description: "Sabor a Mi (Sophie Legay Peñaloza), c'est une âme romantique avec une énergie débordante, beaucoup d'amour et une manière d'apprécier le moment présent comme si c'était le dernier.",
+        image: "public/images/Saborami2.jpg",
+        instagram: "https://www.instagram.com/sabor_a__mi/",
+        soundcloud: "https://soundcloud.com/sophie-legay-1",
+        youtube: "https://youtu.be/NB7YU-Q-R50",
       }
     ],
     day2: [
       {
-        name: "Un*Deux",
-        description: "Artist 5 is a rising star in the R&B scene, known for their smooth vocals and emotional performances. Their music blends traditional R&B with modern production.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "20:00",
-        instagram: "https://instagram.com/artist5",
-        spotify: "https://open.spotify.com/artist/artist5",
-        deezer: "https://www.deezer.com/artist/artist5"
+        name: "Un*Deux & guests",
+        description: "Originaire de Vitry Sur Seine, UN*DEUX est un jeune DJ/Producteur possédant une large palette d'influences qui se reflète dans ses propres productions et ses DJ set, ou il n'hésite pas à croiser House, Techno et Hip Hop.",
+        image: "public/images/undeux.jpg",
+        instagram: "https://soundcloud.com/un-deux",
+        soundcloud: "https://www.instagram.com/undeux",
+        youtube: "https://www.youtube.com/watch?v=8Qyqqthwpd8",
       },
       {
-        name: "Artist 6",
-        description: "Artist 6 brings a fresh perspective to indie music with their unique sound and compelling songwriting.",
+        name: "Charbeat & Galvain",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "21:30",
-        instagram: "https://instagram.com/artist6",
-        spotify: "https://open.spotify.com/artist/artist6",
-        deezer: "https://www.deezer.com/artist/artist6"
+        instagram: "https://www.instagram.com/dj_charbeat/",
+
       },
-      {
-        name: "Gis",
-        description: "Artist 7 pushes the boundaries of contemporary jazz, creating innovative compositions that respect tradition while embracing modernity.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "23:00",
-        instagram: "https://instagram.com/artist7",
-        spotify: "https://open.spotify.com/artist/artist7",
-        deezer: "https://www.deezer.com/artist/artist7"
-      },
-      {
-        name: "Ilan",
-        description: "Artist 8 captivates audiences with their storytelling and authentic approach to folk music, creating intimate connections through their performances.",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80",
-        time: "00:30",
-        instagram: "https://instagram.com/artist8",
-        spotify: "https://open.spotify.com/artist/artist8",
-        deezer: "https://www.deezer.com/artist/artist8"
-      }
     ],
   };
 
