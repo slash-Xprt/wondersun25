@@ -66,7 +66,7 @@ function App(): JSX.Element {
         youtube: "https://www.youtube.com/watch?v=0WKprYXS9zI",
       },
       {
-        name: "Charbeat & Galvain",
+        name: "Charbeat & friends",
         image: "images/charbeat.jpeg",
         instagram: "https://www.instagram.com/dj_charbeat/",
 
