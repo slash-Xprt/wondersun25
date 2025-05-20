@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    <!-- Contact Form -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <div>
+            <label htmlFor="name">Nom complet</label>
+            <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+            <label htmlFor="subject">Sujet</label>
+            <select id="subject" name="subject" required>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="billetterie">Billetterie</option>
+                <option value="programme">Programme</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="presse">Presse</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+        <div>
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" required rows="6"></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <!-- Newsletter Form -->
+    <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <input placeholder="ton adresse email" type="email" name="email" required />
+        <button type="submit">S'inscrire</button>
+    </form>
+</body>
+</html> 
