@@ -59,7 +59,7 @@ function App(): JSX.Element {
       },
             {
         name: "Loulou Ferrari",
-        description: "Loulou Ferrari est une DJ française née à Annecy. Elle est inscrite dès l’âge de 5 ans au Conservatoire National d’Annecy. C’est naturellement qu’elle commença à mixer et joua dans divers endroits, allant de palaces prestigieux( Mandarin Oriental, Les Airelles) aux clubs les plus réputés( Rex Club, Audio, Sacré, Renate..) ainsi que pour des festivals ( Burning Man, Love International, Marvellous Island...).",
+        description: "Loulou Ferrari est une DJ française née à Annecy. Elle est inscrite dès l'âge de 5 ans au Conservatoire National d'Annecy. C'est naturellement qu'elle commença à mixer et joua dans divers endroits, allant de palaces prestigieux( Mandarin Oriental, Les Airelles) aux clubs les plus réputés( Rex Club, Audio, Sacré, Renate..) ainsi que pour des festivals ( Burning Man, Love International, Marvellous Island...).",
         image: "images/LOULOUFERRARI.jpg",
         instagram: "https://www.instagram.com/loulouferrari_",
         soundcloud: "https://soundcloud.com/loulouferrari",
@@ -173,48 +173,33 @@ function App(): JSX.Element {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Reste informé.e</h2>
           <p className="text-xl mb-8 text-white">Abonne toi et sois le ou la première informée des actus et mise en vente des billets.</p>
-          <form 
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.target as HTMLFormElement;
-              const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-              
-              if (emailInput.value && !isSubscribing) {
-                setIsSubscribing(true);
-                try {
-                  const response = await subscribeToNewsletter(emailInput.value);
-                  if (response.success) {
-                    emailInput.value = '';
-                    alert('Inscription réussie ! Vous recevrez bientôt un email de confirmation.');
-                  } else {
-                    throw new Error(response.message || 'Erreur lors de l\'inscription');
-                  }
-                } catch (error) {
-                  console.error('Newsletter error:', error);
-                  const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue. Veuillez réessayer.';
-                  alert(errorMessage);
-                } finally {
-                  setIsSubscribing(false);
-                }
-              }
-            }} 
+          <form
+            name="newsletter"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto"
           >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p className="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
             <input
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-yellow-400"
               placeholder="ton adresse email"
               type="email"
+              name="email"
               required
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               title="Veuillez entrer une adresse email valide"
-              disabled={isSubscribing}
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="bg-yellow-400 text-white text-xl hover:bg-yellow-300 px-6 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 w-full sm:w-auto"
-              disabled={isSubscribing}
             >
-              {isSubscribing ? 'Inscription...' : 'S\'inscrire'}
+              S'inscrire
             </button>
           </form>
         </div>
