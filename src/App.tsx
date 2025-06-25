@@ -75,7 +75,7 @@ function App(): JSX.Element {
       },
               {
         name: "Baume",
-        image: "images/Baume.jpg",
+        image: "images/Baume.jpeg",
       },
       {
         name: "Charbeat & friends",
@@ -84,7 +84,7 @@ function App(): JSX.Element {
       },
          {
         name: "Bonzanza Music",
-        image: "images/Bonanza.jpeg",
+        image: "images/Bonanza.jpg",
       },
     ],
   };
