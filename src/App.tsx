@@ -47,11 +47,10 @@ function App(): JSX.Element {
         soundcloud: "https://soundcloud.com/sophie-legay-1",
         youtube: "https://youtu.be/NB7YU-Q-R50",
       },
-            },
          {
         name: "Louise UFO",
         image: "images/louise UFO.jpg",
-      }
+      },
     ],
     day2: [
       {
