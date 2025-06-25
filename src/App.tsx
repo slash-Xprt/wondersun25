@@ -51,6 +51,11 @@ function App(): JSX.Element {
         name: "Louise UFO",
         image: "images/louise UFO.jpg",
       },
+             {
+        name: "Komm",
+        image: "images/Komm.jpg",
+        instagram: "https://www.instagram.com/komm.rec/",
+      },
     ],
     day2: [
       {
@@ -79,7 +84,7 @@ function App(): JSX.Element {
       },
       {
         name: "Charbeat & friends",
-        image: "images/charbeat.jpeg",
+        image: "images/Galbeats.jpg",
         instagram: "https://www.instagram.com/dj_charbeat/",
       },
          {
