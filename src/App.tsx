@@ -46,6 +46,11 @@ function App(): JSX.Element {
         instagram: "https://www.instagram.com/sabor_a__mi/",
         soundcloud: "https://soundcloud.com/sophie-legay-1",
         youtube: "https://youtu.be/NB7YU-Q-R50",
+      },
+            },
+         {
+        name: "Louise UFO",
+        image: "images/louise UFO.jpg",
       }
     ],
     day2: [
@@ -65,11 +70,22 @@ function App(): JSX.Element {
         soundcloud: "https://soundcloud.com/loulouferrari",
         youtube: "https://www.youtube.com/watch?v=0WKprYXS9zI",
       },
+         {
+        name: "Martin Munier (Sacré)",
+        image: "images/martin.jpg",
+      },
+              {
+        name: "Baume",
+        image: "images/Baume.jpg",
+      },
       {
         name: "Charbeat & friends",
         image: "images/charbeat.jpeg",
         instagram: "https://www.instagram.com/dj_charbeat/",
-
+      },
+         {
+        name: "Bonzanza Music",
+        image: "images/Bonanza.jpeg",
       },
     ],
   };
